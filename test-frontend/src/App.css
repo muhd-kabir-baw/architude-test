@@ -1,38 +1,198 @@
+:root{
+  --bg-color: #fcfffe;
+  --sec-color: #e8edec;
+  --txt-color: #007d4e;
+  --main-font: 'Stint Ultra Condensed', cursive;
+}
+/* Body  */
 .App {
-  text-align: center;
+  background-color: var(--bg-color); 
+}
+ 
+/* Navbar */
+.logo{
+  width:75px;
+  height:75px;  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.custom-nav-bg {  
+  background-color: var(--bg-color); 
+  /* background-color: red; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.responsive-navbar-nav{
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: red;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* Start Blurb */
+.startBlurb{
+  padding-bottom:125px;
+}
+
+.startBlurb .container{
+}
+
+.smText{
+  display:flex;
+  align-items:center;
+}
+
+.smText img{
+  max-width:100%;
+  height:auto;
+  width: 20px;
+  display:flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
+.smText span{
+  
+}
+
+.mdText{
+}
+
+.lgText{
+}
+
+.btn{
+}
+
+.salon{  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  max-width:100%;
+  height:auto
+}
+
+/* Featured In */
+.featuredInCont{
+  padding-bottom: 50px;
+}
+
+.featuredInCont img{  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  max-width:100%;
+  height:auto
+}
+
+.featuredIn { 
+  position: absolute; 
+  bottom: -8px; 
+  left: 100px; 
+}
+
+.featuredIn span { 
+  color: var(--txt-color); 
+  font: bold 20px/30px Helvetica, Sans-Serif; 
+}
+
+/* ratingsAndReviews */
+.ratingsAndReviews{
+  padding-bottom: 100px;
+  padding-top: 75px;
+}
+
+.gReviews{
+
+}
+
+.studReviews{
+
+}
+
+.starIcon{
+  color: yellow;
+  width:20px;
+  height:auto;
+  border-color:black;
+
+}
+
+.blurbText{
+  font-family: var(--main-font);
+}
+
+.person{  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  max-width:100%;
+  height:auto
+}
+
+/* midBlurb */
+.midBlurb{
+  background-color: var(--sec-color);
+  padding-top: 75px;
+  padding-bottom: 75px;
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+
+.midBlurb img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  max-width:100%;
+  height:auto
+} 
+
+/* endBlurb */
+
+.endBlurb{
+  padding-top:30px;
+  padding-bottom:75px;
+}
+
+.endBlurbLeft{
+  margin-left: 75px
+}
+
+.endBlurb img{  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  max-width:100%;
+  height:auto
+}
+
+/* contactForm */
+.contactUs{
+  padding-left: 25px;
+}
+
+.form{
+  padding-right: 15px;
+  padding-bottom: 25px;
+}
+
+/* Footer */
+.footer{
+  background-color: var(--sec-color); 
+}
+
+.newsletter{
+  padding: 45px;
+}
+
+.text{
+  padding-bottom: 40px;
+}
+
+
+/*  */
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
