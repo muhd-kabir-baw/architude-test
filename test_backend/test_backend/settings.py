@@ -80,16 +80,37 @@ WSGI_APPLICATION = 'test_backend.wsgi.application'
 DATABASES = {
     'default': {      
         'ENGINE': 'djongo',      
-        'NAME': 'test-db',
-        
-       'HOST' : 'mongodb+srv://kabir:w9689604D@test-db.l9kfy.mongodb.net/test',
-#that is your connection link with your username,password and db name,here i created a db using mlabs of mongodb       
-        'USER' : 'kabir',       
-        'PASSWORD' : 'w9689604D',   
+        'NAME': 'test-db',        
+        'HOST': 'mongodb+srv://test-db:w9689604D@....mongodb.net/test?retryWrites=true',
+        'USER': 'kabir',
+        'PASSWORD': 'w9689604D',
     }
 }
 
+""" 
+'CLIENT': {
+            'host': 'localhost:27017',
+            },
+"""
 
+""" 
+'CLIENT': {
+                'host': 'test-db-shard-00-02.l9kfy.mongodb.net:27017',
+                'username': 'kabir',
+                'password': 'w9689604D',
+                'authSource': 'test-db',
+                'authMechanism': 'SCRAM-SHA-1'
+            },
+'LOGGING': {
+    'version': 1,
+    'loggers': {
+        'djongo': {
+            'level': 'DEBUG',
+            'propagate': False,                        
+        }
+    },
+},  
+"""
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
