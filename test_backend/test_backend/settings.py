@@ -11,7 +11,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+try:
+    from urllib import quote  # Python 2.X
+    from urllib import quote_plus
+except ImportError:
+    from urllib.parse import quote  # Python 3+
+    from urllib.parse import quote_plus
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -81,11 +86,17 @@ DATABASES = {
     'default': {      
         'ENGINE': 'djongo',      
         'NAME': 'test-db',        
-        'HOST': 'mongodb+srv://test-db:w9689604D@....mongodb.net/test?retryWrites=true',
-        'USER': 'kabir',
-        'PASSWORD': 'w9689604D',
+        'CLIENT': {
+            'host': "mongodb+srv://kabir:w9689604D@test-db.l9kfy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+        }, 
     }
 }
+
+""" 
+'CLIENT': {
+            'host': "mongodb+srv://kabir:" + quote_plus('w9689604D') + "@Test-DB.mongodb.net/test?retryWrites=true&w=majority"
+        }, 
+ """
 
 """ 
 'CLIENT': {
