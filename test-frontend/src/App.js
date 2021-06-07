@@ -1,3 +1,4 @@
+import React,  { useState, useEffect } from 'react';
 import logo from './img/logo.png';
 
 import scissors from './img/scissors.png';
@@ -16,13 +17,13 @@ import cutAndWash from './img/cut-and-wash.jpg';
 import perm from './img/perm.jpg';
 import hairTreatment from './img/hair-treatment.jpg';
 
-import hairCut1 from './img/haircut1.jpg';
-import hairCut2 from './img/haircut2.jpg';
-import hairCut3 from './img/haircut3.jpg';
-import hairCut4 from './img/haircut4.jpg';
-import hairCut5 from './img/haircut5.jpg';
-import hairCut6 from './img/haircut6.jpg';
 import haircutCollage from './img/haircut-collage.png';
+
+
+import axios from "axios";
+
+import { API_URL } from "./constants/index";
+
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -253,7 +254,7 @@ function EndBlurb(){
         <Row>
           <Col className="endBlurbLeft">
             <Row>
-              <h1>Happy Faces of Happy Customers</h1>
+              <h1>Happy Faces of Happy Customers</h1> 
             </Row>
             <Row>
               <span>Customers are happy with our services and with our staff! See what they say about us!</span>
@@ -272,7 +273,35 @@ function EndBlurb(){
   )
 }
 
+
+const initialFormData = Object.freeze({
+  name: "",
+  email: "",
+  subject: "",
+  message: ""
+});
+
 function ContactForm(){
+
+  const [formData,setFormData] = useState(initialFormData);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+
+      // Trimming any whitespace
+      [e.target.name]: e.target.value.trim()
+    });
+
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(formData);    
+    axios.post(API_URL, formData);
+    // ... submit to API or something
+  };
+    
   return(
     <Container fluid>
       <Row>
@@ -287,21 +316,21 @@ function ContactForm(){
           <div className="form">
             <Form>
               <Form.Group controlId="formResponsiveName">
-                <Form.Control type="text" placeholder="Name" />
+                <Form.Control name="name" type="text" placeholder="Name" onChange={handleChange}  />
               </Form.Group>
 
               <Form.Group controlId="formResponsiveEmail">
-                <Form.Control type="email" placeholder="Email Address" />
+                <Form.Control name="email" type="email" placeholder="Email Address" onChange={handleChange}  />
               </Form.Group>
 
               <Form.Group controlId="formResponsiveSubject">
-                <Form.Control type="text" placeholder="Subject" />
+                <Form.Control name="subject" type="text" placeholder="Subject" onChange={handleChange}  />
               </Form.Group>
 
               <Form.Group controlId="formResponsiveTextArea">
-                <Form.Control as="textarea" rows={3} placeholder="Your Message" />
+                <Form.Control as="textarea" name="message" rows={3} placeholder="Your Message" onChange={handleChange}  />
               </Form.Group>
-              <Button variant="primary" type="submit">
+              <Button variant="primary" onClick ={handleSubmit} type="submit">
                 Send Message
               </Button>
             </Form>
