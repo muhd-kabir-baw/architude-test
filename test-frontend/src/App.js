@@ -68,8 +68,8 @@ function StartBlurb(){
                 Contact us and get your first 15% discount from us!
               </span>
             </Row>
-            <Row className="btn">
-              <Button>
+            <Row className="btn-cont">
+              <Button variant="primary" className="servicesBtn">
                 View Services
               </Button>
             </Row>
@@ -173,11 +173,11 @@ function RatingsAndReviews(){
           <Row>
             <Col>
               <Row>                
-                <h5>Jessica Tan</h5>
+                <h5 className="name">Jessica Tan</h5>
               </Row>
               <Row>
                 <span>
-                  Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                  I have been following this salon and I'm happy with their service and haircuts. They're the best!
                 </span>
               </Row>
             </Col>
@@ -194,19 +194,19 @@ function RatingsAndReviews(){
 function MidBlurb(){
   return(
     <Container className="midBlurb" fluid>
-      <Row>
-        <Col xs={8}>
-          <Row>
+      <Row className="topHalf">
+        <Col xs={8} className="topHalfText" >
+          <Row >
             <span>CHANGE YOUR HAIR</span>
           </Row>
-          <Row>
-            <h1>
+          <Row >
+            <h1 className="title">
               Start Your Journey of Having Happy Hair & Stylist Cut!
             </h1>
           </Row>
         </Col>
-        <Col>
-          <Button>View Services</Button>
+        <Col className="topHalfBtn">
+          <Button variant="primary" className="servicesBtn">View Services</Button>
         </Col>
       </Row>
       <Row>
@@ -215,10 +215,10 @@ function MidBlurb(){
             <img className="cutAndWash" alt="cutAndWashImg" src={cutAndWash}></img>
           </Row>
           <Row>
-            <h5>Cut & Wash</h5>
+            <h5 className="sectionTitle">Cut & Wash</h5>
           </Row>
           <Row>
-            <span>Giving you the best service, with a cut of your choice, and together with a with our top notch shampoo products.</span>
+            <span className="sectionTxt">Giving you the best service, with a cut of your choice, and together with a with our top notch shampoo products.</span>
           </Row> 
         </Col>
         <Col>
@@ -226,10 +226,10 @@ function MidBlurb(){
             <img className="perm" alt="permImg" src={perm}></img>
           </Row>
           <Row>
-            <h5>Perm</h5>
+            <h5 className="sectionTitle">Perm</h5>
           </Row>
           <Row>
-            <span>For those who want to get those curls up and going!</span>
+            <span className="sectionTxt">For those who want to get those curls up and going!</span>
           </Row> 
         </Col>
         <Col>
@@ -237,10 +237,10 @@ function MidBlurb(){
             <img className="hairTreatment" alt="hairTreatmentImg" src={hairTreatment}></img>
           </Row>
           <Row>
-            <h5>Hair Treatment</h5>
+            <h5 className="sectionTitle">Hair Treatment</h5>
           </Row>
           <Row>
-            <span>We will analyse your hair condition and give you the best treatment for your hair to grow healthily.</span>
+            <span className="sectionTxt">We will analyse your hair condition and give you the best treatment for your hair to grow healthily.</span>
           </Row> 
         </Col>
       </Row>
@@ -260,7 +260,7 @@ function EndBlurb(){
               <span>Customers are happy with our services and with our staff! See what they say about us!</span>
             </Row>
             <Row>
-              <Button>View Services</Button>
+              <Button variant="primary" className="testimonialsBtn">View All Testimonials</Button>
             </Row>
           </Col>
           <Col>
@@ -330,7 +330,7 @@ function ContactForm(){
               <Form.Group controlId="formResponsiveTextArea">
                 <Form.Control as="textarea" name="message" rows={3} placeholder="Your Message" onChange={handleChange}  />
               </Form.Group>
-              <Button variant="primary" onClick ={handleSubmit} type="submit">
+              <Button variant="primary" onClick ={handleSubmit} type="submit" className="sendBtn">
                 Send Message
               </Button>
             </Form>
@@ -348,7 +348,7 @@ function ContactFormFooter(){
         <h1> Subscribe to Newsletter</h1>
       </div>
       <div className="text d-flex justify-content-center">        
-        <p>Enter your email address to register to our newsletter subscription delivered on regular basis</p>
+        <span>Enter your email address to register to our newsletter subscription delivered on regular basis</span>
       </div>
     </Container>
   )
