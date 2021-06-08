@@ -37,7 +37,7 @@ https://www.djongomapper.com/get-started/
 1. Open up test_frontend and test_backend in separate terminals in VS-Code (Or any equivalent IDE)
 2. In test_frontend, run the command `npm run start`
 3. In test_backend, open up `settings.py` in the nested test_backend folder.
-4. Under `DATABASES`, change the value of `host` to your own Mongo Cluster link
+4. Under `DATABASES`, change the value of `host` to your own Mongo Cluster link (I used Atlas for its cloud benefits but using a shell works too)
 5. Save the file, then run the commands `python manage.py makemigrations`, followed by `python manage.py migrate`
 6. Run the command `python manage.py runserver` to start the server.
 7. Open up the frontend at `localhost:3000` 
