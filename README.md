@@ -3,10 +3,6 @@
 # MongoDB Cheat Sheet
 https://gist.github.com/bradtraversy/f407d642bdc3b31681bc7e56d95485b6
 
-# How to set up MongoDB/Django
-
-https://django-mongodb-engine.readthedocs.io/en/latest/topics/setup.html
-
 # React Documentation
 
 https://reactjs.org/docs/hello-world.html
@@ -15,12 +11,25 @@ https://reactjs.org/docs/hello-world.html
  
 https://react-bootstrap.github.io/getting-started/introduction/
 
+# Django Documentation
+
+https://docs.djangoproject.com/en/3.2/
+
+# MongoDB Documentation
+
+https://docs.mongodb.com/
+
+# Djongo Documentation
+
+https://www.djongomapper.com/get-started/
+
 # Concessions
 
--Unable to attempt challenge (email hosting)
--Unable to host
--Unable to style some parts of frontend
--Unable to clear form after sending of data
+1. Unable to attempt challenge (email hosting)
+2. Unable to host
+3. Unable to style some parts of frontend properly
+4. Unable to clear form after sending of data
+5. Responsiveness is not at its most effective
 
 
 # How to Run
